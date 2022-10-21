@@ -14,7 +14,7 @@ from qtpy.QtWidgets import QHBoxLayout, QPushButton, QWidget
 if TYPE_CHECKING:
     import napari
 
-
+#example of how to use QWidget
 class ExampleQWidget(QWidget):
     # your QWidget.__init__ can optionally request the napari viewer instance
     # in one of two ways:
@@ -38,9 +38,29 @@ class ExampleQWidget(QWidget):
 def example_magic_widget(img_layer: "napari.layers.Image"):
     print(f"you have selected {img_layer}")
 
+#from napari.types import ImageData, LayerDataTuple
 
-# Uses the `autogenerate: true` flag in the plugin manifest
-# to indicate it should be wrapped as a magicgui to autogenerate
-# a widget.
-def example_function_widget(img_layer: "napari.layers.Image"):
-    print(f"you have selected {img_layer}")
+def segment_image(image: ImageData) -> LabelsData:
+    """Apply thresholding and connected component analysis"""
+    from skimage.filters import threshold_otsu
+    from skimage.measure import label
+    
+    binary = image > threshold_otsu(image)
+    labels = label(binary)
+    return labels
+
+from napari.types import ImageData, LayerDataTuple
+
+def segment_image2(image: ImageData) -> LayerDataTuple:
+    """Apply thresholding and connected component analysis"""
+    from skimage.filters import threshold_otsu
+    from skimage.measure import label
+    
+    binary = image > threshold_otsu(image)
+    label_image = label(binary)
+    
+    output_tuple = (label_image, # first parameter of the tuple: data
+                    {'name': 'Output Label Image', 'opacity': 0.4}, # second parameter of the tuple: layer properties
+                    'labels') # third parameter of the tuple: layer type
+    
+    return output_tuple

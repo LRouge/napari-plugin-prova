@@ -9,7 +9,10 @@ contributions:
       python_name: napari_plugin_prova._widget:example_magic_widget
       title: Make example magic widget
     - id: napari-plugin-prova.make_func_widget
-      python_name: napari_plugin_prova._widget:example_function_widget
+      python_name: napari_plugin_prova._widget:segment_image2
+      title: Make example function widget
+      - id: napari-plugin-prova.make_func_widget
+      python_name: napari_plugin_prova._widget:segment_image
       title: Make example function widget
   widgets:
     - command: napari-plugin-prova.make_qwidget
@@ -18,4 +21,8 @@ contributions:
       display_name: Example Magic Widget
     - command: napari-plugin-prova.make_func_widget
       autogenerate: true
-      display_name: Example Function Widget
+      display_name: segment_image2
+     - command: napari-plugin-prova.make_func_widget
+      autogenerate: true
+      display_name: segment_image
+     

@@ -25,7 +25,7 @@ https://napari.org/stable/plugins/index.html
 
 You can install `napari-plugin-prova` via [pip]:
 
-    pip install napari-plugin-prova
+    pip install git+https://github.com/LRouge/napari-plugin-prova.git
 
 
 

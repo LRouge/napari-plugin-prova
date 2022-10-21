@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/githubuser/napari-plugin-prova/branch/main/graph/badge.svg)](https://codecov.io/gh/githubuser/napari-plugin-prova)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-plugin-prova)](https://napari-hub.org/plugins/napari-plugin-prova)
 
-A simple plugin to use with napari
+Plugin for image segmentation 
 
 ----------------------------------
 

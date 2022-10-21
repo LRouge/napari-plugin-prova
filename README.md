@@ -22,6 +22,10 @@ https://napari.org/stable/plugins/index.html
 -->
 
 ## Installation
+Please create a new env first 
+Istall napari 0.4.16 first
+
+conda install -c conda-forge napari = 0.4.16
 
 You can install `napari-plugin-prova` via [pip]:
 
